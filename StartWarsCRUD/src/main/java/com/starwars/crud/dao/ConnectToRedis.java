@@ -9,7 +9,7 @@ import io.lettuce.core.api.sync.RedisCommands;
 
 public class ConnectToRedis {
 	
-	private static final String REDIS_URL = "redis://localhost:6379/0";
+	private static final String REDIS_URL = "redis://mp9EB7PKv3LrrDrnJOaw2DBXjKFQP9Ll@redis-12668.c57.us-east-1-4.ec2.cloud.redislabs.com:12668/0";
 	
 	public void saveCharacter(Person person) {
 		RedisClient redisClient = RedisClient.create(REDIS_URL);
