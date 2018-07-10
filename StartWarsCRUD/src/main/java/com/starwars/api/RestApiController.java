@@ -103,7 +103,14 @@ public class RestApiController {
 		ConnectToRedis connectToRedis = new ConnectToRedis();
 		Person personToUpdate = connectToRedis.listCharacter(key);
 		if(personToUpdate != null) {
-			//save person
+			ValidationService validationService = new ValidationService();
+			if(!validationService.isValidPlanet(person.getPlanet())) {
+				System.out.println("El nombre de planeta ingresado no existe");
+				return ResponseEntity
+	            .status(HttpStatus.INTERNAL_SERVER_ERROR)
+	            .body("El nombre de planeta ingresado no existe");
+			}
+			
 			connectToRedis.saveCharacter(person);
 			System.out.println("UPDATE");
 			System.out.println(person.toString());
