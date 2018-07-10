@@ -35,7 +35,7 @@ public class Person {
 		this.mass = "100";
 		this.hairColor = "black";
 		this.gender = "male";
-		this.planet = "Earth";
+		this.planet = "Alderaan";
 	}
 	
 	public String getName() {
